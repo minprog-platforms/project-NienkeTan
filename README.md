@@ -1,13 +1,11 @@
 # project-NienkeTan
 project-NienkeTan created by GitHub Classroom
 
-## Benodigde data:
--Stock foto's
-[shutterstock](https://www.shutterstock.com/nl/photos)
+## Benodigde data
+-Stock foto's [shutterstock](https://www.shutterstock.com/nl/photos)
 -Ontwerp app logo
--
 
-## Vergelijkbare apps:
+## Vergelijkbare apps
 -KptnCook Meal Plans & Recipes
 Plannen door te kiezen uit verschillende recepten van KptnCook. Focus ligt op het 'verkopen' van de recepten. Ik wil graag eigen recepten goed kunnen plannen. 
 Het is minder nodig om recepten op te kunnen zoeken.
