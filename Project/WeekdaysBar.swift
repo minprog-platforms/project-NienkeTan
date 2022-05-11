@@ -31,6 +31,6 @@ struct WeekdaysBar: View {
                     
                 }
             }
-        }.padding(.vertical, 15)
+        }.padding(.top, 15)
     }
 }
