@@ -8,25 +8,24 @@
 import SwiftUI
 
 struct ContentView: View {
-    
-    let weekDays: [String] = ["M","T", "W", "T", "F", "S", "S"]
-    
+
+    let weekdays : [String] = ["M","T", "W", "T", "F", "S", "S"]
     init(){
         UINavigationBar.appearance()
             .largeTitleTextAttributes = [.foregroundColor: UIColor.white]
     }
-    
+
     var body: some View {
         TabView {
             NavigationView {
                 ZStack{
-                    
+
                     BackgroundMain()
-                    
+
                     VStack{
                         
                         HStack(){
-                            ForEach(weekDays, id: \.self) {
+                            ForEach(weekdays, id: \.self) {
                                 weekDay in
                                 VStack{
                                     Button{
@@ -74,7 +73,6 @@ struct ContentView: View {
                 Text("Calendar").foregroundColor(.black)
                     .font(.system(size: 20, weight: .light))
             }
-            
         }
     }
 }
