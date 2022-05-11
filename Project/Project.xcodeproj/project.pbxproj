@@ -15,6 +15,7 @@
 		FB470900281C03CE00CDA3BB /* ProjectUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB4708FF281C03CE00CDA3BB /* ProjectUITests.swift */; };
 		FB470902281C03CE00CDA3BB /* ProjectUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB470901281C03CE00CDA3BB /* ProjectUITestsLaunchTests.swift */; };
 		FB4709112826CD2A00CDA3BB /* BackgroundMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB4709102826CD2A00CDA3BB /* BackgroundMain.swift */; };
+		FBB943C8282B9610001130C9 /* WeekdaysBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB943C7282B9610001130C9 /* WeekdaysBar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +47,7 @@
 		FB4708FF281C03CE00CDA3BB /* ProjectUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectUITests.swift; sourceTree = "<group>"; };
 		FB470901281C03CE00CDA3BB /* ProjectUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		FB4709102826CD2A00CDA3BB /* BackgroundMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundMain.swift; sourceTree = "<group>"; };
+		FBB943C7282B9610001130C9 /* WeekdaysBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekdaysBar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +78,7 @@
 		FB4708D8281C03C400CDA3BB = {
 			isa = PBXGroup;
 			children = (
+				FBB943C7282B9610001130C9 /* WeekdaysBar.swift */,
 				FB4709102826CD2A00CDA3BB /* BackgroundMain.swift */,
 				FB4708E3281C03C400CDA3BB /* Project */,
 				FB4708F4281C03CE00CDA3BB /* ProjectTests */,
@@ -262,6 +265,7 @@
 			files = (
 				FB4709112826CD2A00CDA3BB /* BackgroundMain.swift in Sources */,
 				FB4708E7281C03C400CDA3BB /* ContentView.swift in Sources */,
+				FBB943C8282B9610001130C9 /* WeekdaysBar.swift in Sources */,
 				FB4708E5281C03C400CDA3BB /* ProjectApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
