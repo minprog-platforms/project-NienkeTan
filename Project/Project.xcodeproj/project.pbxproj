@@ -16,10 +16,11 @@
 		FB470902281C03CE00CDA3BB /* ProjectUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB470901281C03CE00CDA3BB /* ProjectUITestsLaunchTests.swift */; };
 		FB4709112826CD2A00CDA3BB /* BackgroundMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB4709102826CD2A00CDA3BB /* BackgroundMain.swift */; };
 		FBB943C8282B9610001130C9 /* WeekdaysBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB943C7282B9610001130C9 /* WeekdaysBar.swift */; };
-		FBB943CA282BF3EA001130C9 /* RecipePerDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB943C9282BF3EA001130C9 /* RecipePerDay.swift */; };
 		FBB943CC282BF46A001130C9 /* PlannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB943CB282BF46A001130C9 /* PlannerView.swift */; };
 		FBB943CE282BF794001130C9 /* RecipesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB943CD282BF794001130C9 /* RecipesView.swift */; };
-		FBB943D2282BFD5F001130C9 /* SingleRecipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB943D1282BFD5F001130C9 /* SingleRecipe.swift */; };
+		FBB943D2282BFD5F001130C9 /* PageRecipeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB943D1282BFD5F001130C9 /* PageRecipeView.swift */; };
+		FBB943D428350A17001130C9 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB943D328350A17001130C9 /* Recipe.swift */; };
+		FBB943D8283905E4001130C9 /* RecipeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB943D7283905E4001130C9 /* RecipeCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,10 +53,11 @@
 		FB470901281C03CE00CDA3BB /* ProjectUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		FB4709102826CD2A00CDA3BB /* BackgroundMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundMain.swift; sourceTree = "<group>"; };
 		FBB943C7282B9610001130C9 /* WeekdaysBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekdaysBar.swift; sourceTree = "<group>"; };
-		FBB943C9282BF3EA001130C9 /* RecipePerDay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipePerDay.swift; sourceTree = "<group>"; };
 		FBB943CB282BF46A001130C9 /* PlannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlannerView.swift; sourceTree = "<group>"; };
 		FBB943CD282BF794001130C9 /* RecipesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesView.swift; sourceTree = "<group>"; };
-		FBB943D1282BFD5F001130C9 /* SingleRecipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleRecipe.swift; sourceTree = "<group>"; };
+		FBB943D1282BFD5F001130C9 /* PageRecipeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageRecipeView.swift; sourceTree = "<group>"; };
+		FBB943D328350A17001130C9 /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
+		FBB943D7283905E4001130C9 /* RecipeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,11 +88,12 @@
 		FB4708D8281C03C400CDA3BB = {
 			isa = PBXGroup;
 			children = (
-				FBB943CD282BF794001130C9 /* RecipesView.swift */,
 				FBB943CB282BF46A001130C9 /* PlannerView.swift */,
-				FBB943D1282BFD5F001130C9 /* SingleRecipe.swift */,
-				FBB943C9282BF3EA001130C9 /* RecipePerDay.swift */,
+				FBB943CD282BF794001130C9 /* RecipesView.swift */,
 				FBB943C7282B9610001130C9 /* WeekdaysBar.swift */,
+				FBB943D1282BFD5F001130C9 /* PageRecipeView.swift */,
+				FBB943D328350A17001130C9 /* Recipe.swift */,
+				FBB943D7283905E4001130C9 /* RecipeCell.swift */,
 				FB4709102826CD2A00CDA3BB /* BackgroundMain.swift */,
 				FB4708E3281C03C400CDA3BB /* Project */,
 				FB4708F4281C03CE00CDA3BB /* ProjectTests */,
@@ -279,10 +282,11 @@
 				FB4708E7281C03C400CDA3BB /* ContentView.swift in Sources */,
 				FBB943C8282B9610001130C9 /* WeekdaysBar.swift in Sources */,
 				FB4708E5281C03C400CDA3BB /* ProjectApp.swift in Sources */,
-				FBB943CA282BF3EA001130C9 /* RecipePerDay.swift in Sources */,
+				FBB943D8283905E4001130C9 /* RecipeCell.swift in Sources */,
+				FBB943D428350A17001130C9 /* Recipe.swift in Sources */,
 				FBB943CC282BF46A001130C9 /* PlannerView.swift in Sources */,
 				FBB943CE282BF794001130C9 /* RecipesView.swift in Sources */,
-				FBB943D2282BFD5F001130C9 /* SingleRecipe.swift in Sources */,
+				FBB943D2282BFD5F001130C9 /* PageRecipeView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
