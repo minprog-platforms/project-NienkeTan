@@ -1,3 +1,6 @@
+Belangrijk! 
+Ik heb de app gemaakt met de simulator op iPhone 11. Door tijdsnood is het niet gelukt om alles aan te passen zodat het er goed uitziet op andere iphones.
+
 # Aandachtspunten
 1. Bijhouden variabelen in class i.p.v. los. Variabelen die nodig waren in elke View stuurde ik mee als binding parameter. Dit zorgde voor minder overzicht en daarmee werd het opslaan van de variabelen niet mogelijk. Ik heb ze allemaal in een class gezet waarmee ik ze kon aanroepen via 'EnvironmentObject'. 
 2. UIImage kan je niet opslaan in UserDefaults. Uiteindelijk heb ik ze hier wel in opgeslagen na ze te comprimeren en te converteren naar Data.
