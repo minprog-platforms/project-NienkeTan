@@ -7,28 +7,25 @@
 
 import SwiftUI
 
-var week : [String] = ["Monday","Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
-var empty: [[Recipe]] = [[],[],[],[],[],[],[]]
-var testdata: [Recipe] =
-[Recipe(name: "Noodles", ingredients: "Noodle \n1 Pepper \n1 Onion \n1 Garlic", imagename: "default_food", notes: "No directions"),
-Recipe(name: "Rice", ingredients: "Rice \n1 Salt", imagename: "default_food", notes: "No directions"),
-Recipe(name: "Steak", ingredients: "Steak \n1 Butter", imagename: "default_food", notes: "No directions")]
+let week = ["Monday","Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
+let defaultColors = Dictionary(uniqueKeysWithValues: zip(week, [Color.white,Color.white,Color.white,Color.white,Color.white,Color.white,Color.white]))
 
 struct ContentView: View {
-    
-    @State var listofRecipes: [Recipe] = testdata
-    @State var weekdayRecipes: [String:[Recipe]] = Dictionary(uniqueKeysWithValues: zip(week, empty))
-    @State var isweekday: String = "Monday"
+    @StateObject var cookbook = Cookbook()
     
     init(){
         UINavigationBar.appearance()
             .largeTitleTextAttributes = [.foregroundColor: UIColor.white]
     }
     
+    struct Globals {
+        
+    }
+    
     var body: some View {
         TabView {
             NavigationView {
-                PlannerView(listofRecipes: $listofRecipes, weekdayRecipes: $weekdayRecipes, isweekday: $isweekday).navigationTitle("Dinner Planner")
+                PlannerView().environmentObject(cookbook).navigationTitle("Dinner Planner")
             }.accentColor(.white).tabItem {
                 Image(systemName: "calendar").foregroundColor(.black)
                     .frame(width: 120, height: 40.0)
@@ -37,7 +34,7 @@ struct ContentView: View {
                     .font(.system(size: 20, weight: .light))
             }
             NavigationView{
-                RecipesView(listofRecipes: $listofRecipes).navigationTitle("Recipes")
+                RecipesView().environmentObject(cookbook).navigationTitle("Recipes")
             }.accentColor(.white).tabItem {
                 Image(systemName: "fork.knife").foregroundColor(.black)
                     .frame(width: 120, height: 40.0)
@@ -54,6 +51,7 @@ struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
             .previewInterfaceOrientation(.portrait)
+            .environmentObject(Cookbook())
     }
 }
 

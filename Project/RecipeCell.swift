@@ -13,7 +13,7 @@ struct RecipeCell: View {
     
     var body: some View {
         HStack{
-            Image(recipe.imagename)
+            Image(uiImage: UIImage(data: recipe.image)!)
                 .resizable()
                 .aspectRatio(contentMode: .fill)
                 .frame(width: 50, height: 50, alignment: .leading)

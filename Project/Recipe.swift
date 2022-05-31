@@ -7,11 +7,10 @@
 
 import SwiftUI
 
-struct Recipe: Identifiable {
-    let id = UUID()
+struct Recipe: Identifiable, Codable {
+    var id = UUID()
     let name : String
     let ingredients: String
-    let imagename: String
-    let notes: String
+    let image: Data
+    let notes: String  
 }
-

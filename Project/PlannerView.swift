@@ -10,52 +10,72 @@
 import SwiftUI
 
 struct PlannerView: View {
-    
     @State private var showingSheet = false
-    @Binding var listofRecipes: [Recipe]
-    @Binding var weekdayRecipes: [String:[Recipe]]
-    @Binding var isweekday: String
+    @State private var showingAlert = false
+    @EnvironmentObject var cookbook: Cookbook
     
     var body: some View {
         ZStack{
             BackgroundMain()
             VStack{
-                // Bar of weekdays and checkmarks
-                WeekdaysBar(weekdayRecipes: $weekdayRecipes, isweekday: $isweekday)
+                WeekdaysBar()
                 
-                 //List all recipes on day pressed
-                List(weekdayRecipes[isweekday] ??
-                     [Recipe(name: "Add a recipe", ingredients: "", imagename: "default_food", notes: "")])
-                { item in NavigationLink(destination: PageRecipeView(recipe: item)) {
-                    RecipeCell(recipe: item)
-            }
+                List{
+                    Section{
+                        ForEach(cookbook.itemsperday[cookbook.currentday]!)
+                        { item in NavigationLink(destination: PageRecipeView(recipe: item)) {
+                            RecipeCell(recipe: item)
+                        }
+                        }.onDelete(perform: cookbook.deleteSingleItem)
+                    }
                 }
-                Spacer()
+
+                Button("Clear Week") {
+                    showingAlert = true
+                }.foregroundColor(Color.blue).frame(width: 200, height: 40, alignment: .center)
+                    .padding(.vertical)
+                    .alert(isPresented: $showingAlert) {
+                        Alert(
+                            title: Text("Are you sure you want to clear this week?"),
+                            primaryButton: .destructive(Text("Clear")) {
+                                cookbook.clearWeek()
+                            },
+                            secondaryButton: .cancel()
+                        )
+                    }
             }
         }.toolbar{
-            Button {
-                showingSheet.toggle()
-                 } label: {
-                     Image(systemName: "plus.square").foregroundColor(.white)
-            }.sheet(isPresented: $showingSheet) {
-                SheetAddRecipeto_View(listofRecipes: $listofRecipes, weekdayRecipes: $weekdayRecipes, isweekday: $isweekday)
+            HStack{
+                EditButton()
+                Button {
+                    if cookbook.items.count != 0{
+                        showingSheet.toggle()
+                    }
+                } label: {
+                    Image(systemName: "plus.square")
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
+                        .foregroundColor(.white)
+                        .frame(width: 30.0, height: 30.0)
+                }.sheet(isPresented: $showingSheet) {
+                    SheetAddRecipeto_View(cookbook: cookbook)
+                }
             }
         }
     }
 }
 
 struct SheetAddRecipeto_View: View {
-    
     @Environment(\.dismiss) var dismiss
-    @Binding var listofRecipes: [Recipe]
-    @Binding var weekdayRecipes: [String:[Recipe]]
-    @Binding var isweekday: String
+    @ObservedObject var cookbook: Cookbook
     
     var body: some View {
-        List(listofRecipes) { item in
+        
+        List(cookbook.items) { item in
             Button{
-                weekdayRecipes[isweekday]?.append(item)
-                    dismiss()
+                cookbook.itemsperday[cookbook.currentday]!.append(item)
+                cookbook.save()
+                dismiss()
             } label: {
                 RecipeCell(recipe: item)
             }

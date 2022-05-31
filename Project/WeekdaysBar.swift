@@ -8,30 +8,29 @@
 import SwiftUI
 
 struct WeekdaysBar: View {
+    @EnvironmentObject var cookbook: Cookbook
+    @State private var barColors: [String:Color] = defaultColors
     
-    @Binding var weekdayRecipes: [String:[Recipe]]
-    @Binding var isweekday: String
     
     var body: some View {
         HStack(){
             ForEach(week, id: \.self) {
-                weekday in
+                day in
                 VStack{
                     Button{
-                        isweekday = weekday
-                        print(isweekday)
-                        print(weekdayRecipes)
-                        print(weekday)
-                    }label: {Text(weekday.prefix(1))
+                        cookbook.currentday = day
+                        barColors = defaultColors
+                        barColors[day] = Color("textColor")
+                    }label: {Text(day.prefix(1))
                             .foregroundColor(Color("textColorlight"))
                             .font(.system(size: 20, weight: .medium))
                             .frame(width: 50, height: 50)
-                            .background(.white)
+                            .background(barColors[day])
                         
                     }
                     .cornerRadius(/*@START_MENU_TOKEN@*/10.0/*@END_MENU_TOKEN@*/)
                     
-                    if weekdayRecipes[weekday]!.count != 0 {
+                    if cookbook.itemsperday[day]!.count != 0 {
                         Circle()
                             .frame(width: 15, height: 15)
                             .foregroundColor(Color("backgroundColorblue"))
@@ -43,13 +42,16 @@ struct WeekdaysBar: View {
                     }
                 }
             }
-        }.padding(.top, 15)
-            Text(isweekday)
+        }.padding(.top, 15).onAppear {
+            barColors[cookbook.currentday] = Color("textColor")
+        }
+        
+        Text(cookbook.currentday)
                 .font(.system(size: 20))
                 .frame(width: 350, height: 30)
                 .foregroundColor(Color("textColorlight"))
             
-        }
+    }
     
 }
 

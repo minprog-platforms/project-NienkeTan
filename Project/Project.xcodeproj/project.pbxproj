@@ -15,6 +15,8 @@
 		FB470900281C03CE00CDA3BB /* ProjectUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB4708FF281C03CE00CDA3BB /* ProjectUITests.swift */; };
 		FB470902281C03CE00CDA3BB /* ProjectUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB470901281C03CE00CDA3BB /* ProjectUITestsLaunchTests.swift */; };
 		FB4709112826CD2A00CDA3BB /* BackgroundMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB4709102826CD2A00CDA3BB /* BackgroundMain.swift */; };
+		FB5F2069283E47B500626FE0 /* Cookbook.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB5F2068283E47B500626FE0 /* Cookbook.swift */; };
+		FB5F206B283E528B00626FE0 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB5F206A283E528A00626FE0 /* ImagePicker.swift */; };
 		FBB943C8282B9610001130C9 /* WeekdaysBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB943C7282B9610001130C9 /* WeekdaysBar.swift */; };
 		FBB943CC282BF46A001130C9 /* PlannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB943CB282BF46A001130C9 /* PlannerView.swift */; };
 		FBB943CE282BF794001130C9 /* RecipesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB943CD282BF794001130C9 /* RecipesView.swift */; };
@@ -52,6 +54,8 @@
 		FB4708FF281C03CE00CDA3BB /* ProjectUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectUITests.swift; sourceTree = "<group>"; };
 		FB470901281C03CE00CDA3BB /* ProjectUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		FB4709102826CD2A00CDA3BB /* BackgroundMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundMain.swift; sourceTree = "<group>"; };
+		FB5F2068283E47B500626FE0 /* Cookbook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cookbook.swift; sourceTree = "<group>"; };
+		FB5F206A283E528A00626FE0 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		FBB943C7282B9610001130C9 /* WeekdaysBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekdaysBar.swift; sourceTree = "<group>"; };
 		FBB943CB282BF46A001130C9 /* PlannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlannerView.swift; sourceTree = "<group>"; };
 		FBB943CD282BF794001130C9 /* RecipesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesView.swift; sourceTree = "<group>"; };
@@ -88,6 +92,8 @@
 		FB4708D8281C03C400CDA3BB = {
 			isa = PBXGroup;
 			children = (
+				FB5F206A283E528A00626FE0 /* ImagePicker.swift */,
+				FB5F2068283E47B500626FE0 /* Cookbook.swift */,
 				FBB943CB282BF46A001130C9 /* PlannerView.swift */,
 				FBB943CD282BF794001130C9 /* RecipesView.swift */,
 				FBB943C7282B9610001130C9 /* WeekdaysBar.swift */,
@@ -284,6 +290,8 @@
 				FB4708E5281C03C400CDA3BB /* ProjectApp.swift in Sources */,
 				FBB943D8283905E4001130C9 /* RecipeCell.swift in Sources */,
 				FBB943D428350A17001130C9 /* Recipe.swift in Sources */,
+				FB5F2069283E47B500626FE0 /* Cookbook.swift in Sources */,
+				FB5F206B283E528B00626FE0 /* ImagePicker.swift in Sources */,
 				FBB943CC282BF46A001130C9 /* PlannerView.swift in Sources */,
 				FBB943CE282BF794001130C9 /* RecipesView.swift in Sources */,
 				FBB943D2282BFD5F001130C9 /* PageRecipeView.swift in Sources */,
@@ -458,7 +466,7 @@
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.Project;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Project;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -486,7 +494,7 @@
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.Project;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Project;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

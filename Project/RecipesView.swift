@@ -10,9 +10,8 @@
 import SwiftUI
 
 struct RecipesView: View {
-    
     @State private var showingSheet = false
-    @Binding var listofRecipes : [Recipe]
+    @EnvironmentObject var cookbook: Cookbook
     
     var body: some View {
         ZStack{
@@ -26,19 +25,32 @@ struct RecipesView: View {
                     .cornerRadius(/*@START_MENU_TOKEN@*/10.0/*@END_MENU_TOKEN@*/)
                     .padding(.top, 15)
                 
-                List(listofRecipes) {item in
-                    NavigationLink(destination: PageRecipeView(recipe: item)) {
-                            RecipeCell(recipe: item)
+                List{
+                    Section{
+                        ForEach(cookbook.items) {item in
+                            NavigationLink(destination: PageRecipeView(recipe: item)) {
+                                RecipeCell(recipe: item)
+                            }
+                        }.onDelete(perform: cookbook.deleteItems)
                     }
                 }
+                Spacer()
             }
         }.toolbar{
-            Button {
-                showingSheet.toggle()
-            } label: {
-                Image(systemName: "plus.square").foregroundColor(.white)
-            }.sheet(isPresented: $showingSheet) {
-                SheetAddRecipeView(listofRecipes: $listofRecipes)
+            HStack{
+                EditButton()
+                
+                Button {
+                    showingSheet.toggle()
+                } label: {
+                    Image(systemName: "plus.square")
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
+                        .foregroundColor(.white)
+                        .frame(width: 30.0, height: 30.0)
+                }.sheet(isPresented: $showingSheet) {
+                    SheetAddRecipeView(cookbook: cookbook)
+                }
             }
         }
     }
@@ -47,42 +59,95 @@ struct RecipesView: View {
 
 struct SheetAddRecipeView: View {
     @Environment(\.dismiss) var dismiss
+    @ObservedObject var cookbook: Cookbook
+    @State private var showImagePicker = false
     
-    @Binding var listofRecipes : [Recipe]
     @State var recipeName : String = ""
     @State var recipeIngredients : String = ""
     @State var recipeNote : String = ""
-    @State var recipeImageName : String = ""
+    @State private var recipeImage = UIImage()
     
     var body: some View {
-        Text("Add a new recipe")
-            .foregroundColor(Color("textColorlight"))
-            .font(.system(size: 20, weight: .medium))
-            .frame(width: 350, height: 50)
-            .cornerRadius(/*@START_MENU_TOKEN@*/10.0/*@END_MENU_TOKEN@*/)
-            .padding(.top, 15)
-        Form {
-            Text("Enter the recipe name:").foregroundColor(Color("backgroundColorblue"))
-            TextField("Recipe Name", text: $recipeName)
-            Text("Seperate the ingredients by a comma:").foregroundColor(Color("backgroundColorblue"))
-            TextField("Ingredients", text: $recipeIngredients)
-            Text("Write useful notes for your recipe:").foregroundColor(Color("backgroundColorblue"))
-            TextField("Recipe Directions", text: $recipeNote)
-            Text("Upload a photo of your recipe:").foregroundColor(Color("backgroundColorblue"))
+        VStack{
+            Text("Add a new recipe")
+                .foregroundColor(Color("textColorlight"))
+                .font(.system(size: 20, weight: .medium))
+                .frame(width: 350, height: 50, alignment: .leading)
+                .cornerRadius(/*@START_MENU_TOKEN@*/10.0/*@END_MENU_TOKEN@*/)
+                .padding(.top, 15)
             
-            Button("Save") {
-                listofRecipes.append(Recipe(name: recipeName, ingredients: recipeIngredients, imagename: recipeImageName, notes: recipeNote))
-                dismiss()
+            Form {
+                Section{
+                    TextField("Recipe Name", text: $recipeName)
+                }
+                Section(header: Text("Ingredients")){
+                    TextEditor(text: $recipeIngredients).frame(width: 350, height: 200)
+                }
+                Section(header: Text("Directions")){
+                    TextEditor(text: $recipeNote).frame(width: 350, height: 200)
+                }
+                Section{
+                    HStack{
+                        Image(uiImage: self.recipeImage)
+                            .resizable()
+                            .cornerRadius(50)
+                            .padding(.all, 4)
+                            .frame(width: 100, height: 100)
+                            .background(Color.black.opacity(0.2))
+                            .aspectRatio(contentMode: .fill)
+                            .clipShape(Circle())
+                            .padding(8)
+                        Spacer()
+                        Button{
+                            showImagePicker = true
+                        } label: {
+                            Text("Select photo")
+                                .padding()
+                                .foregroundColor(.white)
+                                .frame(width: 150, height: 50,alignment: .center)
+                                .background(Color("backgroundColorblue"))
+                                .font(.system(size: 20, weight: .medium))
+                                .cornerRadius(5)
+                            
+                        }.padding(10).buttonStyle(BorderlessButtonStyle()).sheet(isPresented: $showImagePicker) {
+                            ImagePicker(sourceType: .photoLibrary, selectedImage: self.$recipeImage)
+                        }
+                    }
+                }
+                
+                
+                Section{
+                    HStack{
+                        Button{
+                            dismiss()
+                        }label: {Text("Back")
+                                .padding()
+                                .foregroundColor(Color("backgroundColorblue"))
+                                .frame(width: 100, height: 50,alignment: .center)
+                                .font(.system(size: 20, weight: .medium))
+                                .cornerRadius(5)
+                        }.padding(10).buttonStyle(BorderlessButtonStyle())
+                        
+                        Spacer()
+                        
+                        Button{
+                            cookbook.saveRecipe(name: recipeName, ingredients: recipeIngredients, image: recipeImage, notes: recipeNote)
+                            dismiss()
+                        } label:{ Text("Save")
+                                .padding()
+                                .foregroundColor(.white)
+                                .frame(width: 120, height: 50, alignment: .center)
+                                .background(Color("backgroundColorblue"))
+                                .font(.system(size: 20, weight: .medium))
+                                .cornerRadius(5)
+                        }.padding(10).buttonStyle(BorderlessButtonStyle())
+                        
+                    }
+                }
             }
-            .padding()
-            .foregroundColor(.white)
-            .background(Color.gray)
-            .font(.system(size: 30, weight: .medium))
         }
-        
         
     }
     
 }
-
 
