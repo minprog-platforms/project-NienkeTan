@@ -71,7 +71,7 @@ struct SheetAddRecipeto_View: View {
     
     var body: some View {
         
-        List(cookbook.items) { item in
+        List(cookbook.items) {item in
             Button{
                 cookbook.itemsperday[cookbook.currentday]!.append(item)
                 cookbook.save()

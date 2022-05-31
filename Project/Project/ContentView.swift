@@ -18,10 +18,6 @@ struct ContentView: View {
             .largeTitleTextAttributes = [.foregroundColor: UIColor.white]
     }
     
-    struct Globals {
-        
-    }
-    
     var body: some View {
         TabView {
             NavigationView {
