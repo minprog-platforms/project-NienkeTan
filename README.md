@@ -1,24 +1,8 @@
 # project-NienkeTan
 project-NienkeTan created by GitHub Classroom
 
-## Benodigde data
-1. Stock foto's [shutterstock](https://www.shutterstock.com/nl/photos)
-2. Ontwerp app logo
+## Dinner Planner
+Met deze 'Dinner Planner' App kun je gemakkelijk je avondeten plannen aan het begin van elke week. Recepten zijn zelf toe te voegen met daarbij een notitieveld om jezelf te herinneren aan specifieke benodigdheden of bereidingswijzen van het recept. Upload daarbij een foto en je kunt nu het recept toevoegen aan een dag in de komende week. Verwijder een recept door op het knopje 'edit' te drukken. 
+Plan een of meerdere recepten in om het overzicht te bewaren.
 
-## Vergelijkbare apps
-1. KptnCook Meal Plans & Recipes
-Plannen door te kiezen uit verschillende recepten van KptnCook. Focus ligt op het 'verkopen' van de recepten. Ik wil graag eigen recepten goed kunnen plannen. 
-Het is minder nodig om recepten op te kunnen zoeken.
-
-2. Recipe Keeper
-Een app die de focus legt op het opzoeken/invoeren van recepten. Er is een optie om de recepten toe te voegen aan een planner. 
-Ik wil meer de focus leggen op plannen en wat minder op de instructies van de recepten.
-
-3. Weekly Dinner planner
-Lijkt heel erg op het idee wat ik heb. Wekelijkse planner als eerste view. Je kan makkelijk recepten toevoegen. Ook een optie voor fast food. De interface
-kakn wel wat mooier.
-
-## Uitzoeken:
-1. Kalender implementeren die bijhoud wat de datum is
-2. Verschillende views aan elkaar koppelen
-3. Zoekfunctie
+<img src="https://github.com/minprog-platforms/project-NienkeTan/blob/main/doc/AppScreenshot1.png" width="250" /> <img src="https://github.com/minprog-platforms/project-NienkeTan/blob/main/doc/AppScreenshot2.png" width="250" />
