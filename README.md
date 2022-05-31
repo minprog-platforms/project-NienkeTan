@@ -6,3 +6,13 @@ Met deze 'Dinner Planner' App kun je gemakkelijk je avondeten plannen aan het be
 Plan een of meerdere recepten in om het overzicht te bewaren.
 
 <img src="https://github.com/minprog-platforms/project-NienkeTan/blob/main/doc/AppScreenshot1.png" width="250" /> <img src="https://github.com/minprog-platforms/project-NienkeTan/blob/main/doc/AppScreenshot2.png" width="250" />
+
+# Credits
+De imagepicker is overgenomen van:
+https://designcode.io/swiftui-advanced-handbook-imagepicker
+
+Default recept foto, geen licensie:
+https://pxhere.com/nl/photo/1440151
+
+Opslaan in Userdefaults:
+https://www.hackingwithswift.com/books/ios-swiftui/saving-and-loading-data-with-userdefaults
