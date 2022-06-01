@@ -1,5 +1,6 @@
-# Nienke Tan
+# Project Dinner Planner App
 project-NienkeTan created by GitHub Classroom
+Ontwikkelaar: Nienke Tan
 
 ## Dinner Planner
 Met deze 'Dinner Planner' App kun je gemakkelijk je avondeten plannen aan het begin van elke week. Recepten zijn zelf toe te voegen met daarbij een notitieveld om jezelf te herinneren aan specifieke benodigdheden of bereidingswijzen van het recept. Upload daarbij een foto en je kunt nu het recept toevoegen aan een dag in de komende week. Verwijder een recept door op het knopje 'edit' te drukken. 
