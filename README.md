@@ -17,9 +17,3 @@ https://pxhere.com/nl/photo/1440151
 
 Opslaan in Userdefaults:
 https://www.hackingwithswift.com/books/ios-swiftui/saving-and-loading-data-with-userdefaults
-
-# Demonstratie
-Link naar video: https://video.uva.nl/media/t/0_shq5ow5h 
-
-https://user-images.githubusercontent.com/71008317/171472489-d86b513a-4c46-4c11-b38a-c069cf5fd60b.mp4
-
